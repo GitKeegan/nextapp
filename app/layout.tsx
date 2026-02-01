@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { DropdownElement } from "./components";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,12 +22,23 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
+
+
 }>) {
+  const dropDown1 = [
+    {buttonLabel:"Home", link:"/"},
+    {buttonLabel:"Stats", link:"/stats"},
+    {buttonLabel:"Google", link:"https://google.com"}
+  ];
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <nav className="flex gap-4">
+          <img className='h-5 w-5 object-scale-down'src="./favicon.ico"/>
+          <DropdownElement dropdownLabel="Dropdown" buttons={dropDown1} />
+        </nav>
         {children}
       </body>
     </html>
