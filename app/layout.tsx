@@ -36,7 +36,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <nav className="flex gap-4">
-          <img className='h-5 w-5 object-scale-down'src="./favicon.ico"/>
+          <a href="/"><img className='web-logo'src="./favicon.ico"/></a>
           <DropdownElement dropdownLabel="Dropdown" buttons={dropDown1} />
         </nav>
         {children}

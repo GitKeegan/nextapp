@@ -14,9 +14,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #431414;
     --foreground: #ededed;
   }
+}
+
+.web-logo{
+  width: 35px;
+  height: 35px;
 }
 
 body {
