@@ -67,11 +67,23 @@ export default function Home() {
       <section className="section2">
         
         <div className="container">
-          <div className="col">
-            <h1>Entry to Section 1</h1>
+          <div className="col flex flex-col items-start gap-4">
+            <h1>Sort Visualiser</h1>
+            <img src="/sortVisualiser.png"/>
           </div>
-          <div className="col">
-            <p>This is section 1. Hopefully this does animate.</p>
+          <div className="col flex flex-col items-start gap-4">
+            <p>I created a java application that takes a number of blocks to sort, and a selection of different sorting algorithms,
+              and visually sorts them on screen. I added colouring and sounds to help show what the program was working on at any given
+              moment.
+            </p>
+            <Button
+              as={Link}
+              href="https://github.com/GitKeegan/SortVisualiser"
+              color="success"
+              variant="solid"
+              className="text-white font-medium shadown-sm bg-green-500 hover:bg-green-600 text-center" >
+                Github Repo
+            </Button>
           </div>
         </div>
       

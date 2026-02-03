@@ -1,67 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 ::-webkit-scrollbar {
     display : none;
   }
   
-  *{
-    margin : 0;
-    padding : 0;
-    box-sizing : border-box;
-  }
+*{
+  margin : 0;
+  padding : 0;
+  box-sizing : border-box;
+}
   
-  img {
-    width : 100%;
-    height : 100%;
-    object-fit: cover;
-  }
-  .web-logo{
-    height: 35px;
-    width: 35px;
-  }
+
+img.resize {
+    width:440px; 
+    height: auto;
+}
+
+.web-logo{
+  height: 35px;
+  width: 35px;
+}
   
-  h1{
-    text-transform: uppercase;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 500;
-    letter-spacing: -0.025rem;
-    line-height: 1;
-  }
+h1{
+  text-transform: uppercase;
+  font-family: "Noto Sans";
+  font-weight: 500;
+  letter-spacing: -0.025rem;
+  line-height: 1;
+  font-size: 100px;
+}
   
-  section {
-    position: relative;
-    width : 100%;
-    height : 100svh;
-    min-height : 100svh;
-    overflow : hidden;
-  }
+section {
+  position: relative;
+  width : 100%;
+  height : 100svh;
+  min-height : 100svh;
+  overflow : hidden;
+}
   
-  .container {
-    position : relative;
-    width: 100%;
-    height : 100%;
-    padding : 2rem;
-    display: flex;
-    transform : rotate(30deg);
-    transform-origin: bottom left;
-    will-change: transform;
-  }
+.container {
+  position : relative;
+  width: 100%;
+  height : 100%;
+  padding : 2rem;
+  display: flex;
+  transform : rotate(30deg);
+  transform-origin: bottom left;
+  will-change: transform;
+}
   
-  .container .col {
-    flex : 1;
-    display: flex;
+.container .col {
+  flex : 1;
+  display: flex;
+}
   
-  }
+.container .col .img {
+  width : 35%;
+  height : auto;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+}
   
-  .container .col .img {
-    width : 35%;
-    height : auto;
-    aspect-ratio: 4/5;
-    overflow: hidden;
-  }
-  
-  .section1{
-    background-color: yellow;
-  }
-  .section2{
-    background-color: green;
-  }
-  
+.section1{
+  background-color: yellow;
+}
+.section2{
+  background-color: grey;
+}
