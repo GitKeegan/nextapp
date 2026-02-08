@@ -1,32 +1,33 @@
-"use client";
-
-import Image from "next/image";
-import React, {useState} from "react";
-import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button} from "@nextui-org/react";
+import Link from "next/link";
 
 interface DropdownButtons {
-  dropdownLabel : string;
-  buttons : {buttonLabel : string, link : string}[];
+  dropdownLabel: string;
+  buttons: { buttonLabel: string; link: string }[];
 }
 
-
-export default function DropdownElement({dropdownLabel, buttons}:DropdownButtons) {
-  const [isOpen, setIsOpen] = useState(false);
-  
+export default function DropdownElement({ dropdownLabel, buttons }: DropdownButtons) {
   return (
-    <div className="relative inline-block" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
-      <Dropdown isOpen={isOpen} className="bg-sky-100">
-      <DropdownTrigger>
-        <Button variant="bordered" >
-          {dropdownLabel}
-        </Button>
-      </DropdownTrigger>
-      <DropdownMenu className="justify-center text-center flex-col text-black" aria-label="Static Actions">
-        {buttons.map((button) => (
-          <DropdownItem key={button.link} href={button.link}>{button.buttonLabel}</DropdownItem>
-        ))}
-      </DropdownMenu>
-    </Dropdown>
-    </div>    
+    <div className="relative inline-block group">
+      
+      <div 
+        className="border-2 border-gray-200 dark:border-white/10 px-4 h-10 text-sm rounded-xl flex items-center cursor-default bg-transparent text-foreground hover:bg-gray-100 dark:hover:bg-white/5 transition-all"
+      >
+        {dropdownLabel}
+      </div>
+
+      <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 hidden group-hover:block z-50">
+        <div className="bg-white dark:bg-zinc-400 border border-gray-200 dark:border-white/10 text-foreground rounded-xl shadow-2xl overflow-hidden min-w-[180px] flex flex-col py-2">
+          {buttons.map((button) => (
+            <Link
+              key={button.link}
+              href={button.link}
+              className="px-4 py-2 text-sm text-center hover:bg-sky-100 dark:hover:bg-white/10 transition-colors"
+            >
+              {button.buttonLabel}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }

@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 
+.header{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
 ::-webkit-scrollbar {
     display : none;
   }
@@ -13,14 +19,10 @@
   
 
 img.resize {
-    width:440px; 
+    width:10vh; 
     height: auto;
 }
 
-.web-logo{
-  height: 35px;
-  width: 35px;
-}
   
 h1{
   text-transform: uppercase;
@@ -28,7 +30,8 @@ h1{
   font-weight: 500;
   letter-spacing: -0.025rem;
   line-height: 1;
-  font-size: 100px;
+  font-size: clamp(40px, 8vw, 100px);
+  text-wrap: wrap;
 }
   
 section {
@@ -56,15 +59,33 @@ section {
 }
   
 .container .col .img {
-  width : 35%;
-  height : auto;
-  aspect-ratio: 4/5;
+  width: 100%;       /* Let it take the full width of its column */
+  max-width: 600px;   /* But don't let it get comically large on desktop */
+  height: auto;
+  aspect-ratio: 16/9; /* Standard widescreen look, or use 4/5 for portrait */
   overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+/* 2. Ensure the image inside fills the container */
+.container .col .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This ensures the image fills the box without stretching */
 }
   
 .section1{
-  background-color: yellow;
+  background-color: rgb(101, 99, 99);
 }
 .section2{
-  background-color: grey;
+  background-color: rgb(169, 169, 169);
+}
+.section3 .container {
+  display: flex;
+  flex-direction: column; /* Stacks the img and text vertically */
+  justify-content: center;
+}
+
+.section3 .col {
+  width: 100%; /* Ensure it takes full width */
 }
