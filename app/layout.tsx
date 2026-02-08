@@ -35,7 +35,8 @@ export default function RootLayout({
     {buttonLabel:"Home", link:"/"},
     {buttonLabel:"Stats", link:"/stats"},
     {buttonLabel:"Other Site", link:"http://keegan.mac"},
-    {buttonLabel:"Image of the Day", link:"/IOTD"}
+    {buttonLabel:"Image of the Day", link:"/IOTD"},
+    {buttonLabel:"Weather", link: "/weather"}
   ];
   const dropDown2 = [
     {buttonLabel:"Google", link:"https://google.com"},
